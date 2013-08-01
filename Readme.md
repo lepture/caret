@@ -40,6 +40,14 @@ Insert after caret:
 caret.append('<strong>enhance</strong>')
 ```
 
+### .replaceWith(str)
+
+Replace the selected text:
+
+```js
+caret.replace('<em>replaced text</em>')
+```
+
 ### .parent()
 
 The parent node of caret.

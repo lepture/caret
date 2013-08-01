@@ -48,12 +48,31 @@ Caret.prototype.range = function() {
   return null;
 };
 
+
+/**
+ * Prepend text before caret
+ */
 Caret.prototype.prepend = function(text) {
 };
 
+
+/**
+ * Append text after caret
+ */
 Caret.prototype.append = function(text) {
 };
 
+
+/*
+ * Replace text of the selection
+ */
+Caret.prototype.replaceWith = function(text) {
+};
+
+
+/**
+ * The nearest parent node
+ */
 Caret.prototype.parent = function() {
   var range = this.range();
   if (!range) {
@@ -66,6 +85,10 @@ Caret.prototype.parent = function() {
   return node.parentElement || node.parentNode;
 };
 
+
+/**
+ * Find the block level parent node of caret
+ */
 Caret.prototype.blockParent = function() {
   var parent = this.parent();
   if (!parent) {
@@ -76,7 +99,7 @@ Caret.prototype.blockParent = function() {
 
 
 /**
- * Save caret position.
+ * Save caret position
  */
 Caret.prototype.save = function() {
   var range = this.range();
@@ -87,7 +110,7 @@ Caret.prototype.save = function() {
 
 
 /**
- * Restore caret position.
+ * Restore caret position
  */
 Caret.prototype.restore = function() {
   var r = document.createRange();
@@ -163,12 +186,10 @@ function isChildOf(el, parent) {
   if (!el) {
     return false;
   }
-  var node = el.parentNode;
-  while (node) {
-    if (node == parent) {
+  while (el = el.parentNode) {
+    if (el == parent) {
       return true;
     }
-    node = node.parentNode;
   }
   return false;
 }
