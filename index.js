@@ -2,6 +2,7 @@
 var event = require('event');
 var emitter = require('emitter');
 
+module.exports = Caret;
 
 function Caret(element) {
   this.element = element;
