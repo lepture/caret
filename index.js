@@ -71,14 +71,7 @@ Caret.prototype.blockParent = function() {
   if (!parent) {
     return null;
   }
-  var node = getBlockElement(parent);
-  if (!this.element) {
-    return node;
-  }
-  if (isChildOf(node, this.element)) {
-    return node;
-  }
-  return null;
+  return getBlockElement(parent, this.element);
 };
 
 
@@ -142,7 +135,11 @@ function bindMouse(caret) {
 /**
  * Find the block level parent node
  */
-function getBlockElement(el) {
+function getBlockElement(el, parent) {
+  if (parent && el == parent) {
+    return null;
+  }
+
   var style;
   if (window.getComputedStyle) {
     style = window.getComputedStyle(el);
