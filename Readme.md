@@ -16,6 +16,14 @@ All methods are refered to the instance of `Caret`:
 var caret = new Caret(element)
 ```
 
+### .selection()
+
+Get the selection object.
+
+### .range()
+
+Get the range object.
+
 ### .prepend(str)
 
 Insert before caret:
@@ -32,12 +40,20 @@ Insert after caret:
 caret.append('<strong>enhance</strong>')
 ```
 
-### .parentUtil(tags)
+### .parent()
 
-Recursive find parent node util it matches the tags.
+The parent node of caret.
 
 ```js
-caret.parentUtil('ul')
+var node = caret.parent()
+```
+
+### .blockParent()
+
+Block level parent node of caret.
+
+```js
+var node = caret.blockParent()
 ```
 
 ### .save
@@ -60,7 +76,7 @@ Unbind delegate event handler.
 
 Events that caret emits.
 
-### select
+### select(event, selection)
 
 When it has selected text.
 
