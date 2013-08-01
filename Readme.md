@@ -64,11 +64,11 @@ Block level parent node of caret.
 var node = caret.blockParent()
 ```
 
-### .save
+### .save(range)
 
 Save caret position.
 
-### .restore
+### .restore(range)
 
 Restore caret position.
 
@@ -84,11 +84,11 @@ Unbind delegate event handler.
 
 Events that caret emits.
 
-### select(event, selection)
+### `select(event, selection)`
 
 When it has selected text.
 
-### change
+### `change`
 
 When caret moved.
 

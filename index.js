@@ -101,8 +101,8 @@ Caret.prototype.blockParent = function() {
 /**
  * Save caret position
  */
-Caret.prototype.save = function() {
-  var range = this.range();
+Caret.prototype.save = function(range) {
+  range = range || this.range();
   if (range) {
     this._range = range;
   }
@@ -112,11 +112,11 @@ Caret.prototype.save = function() {
 /**
  * Restore caret position
  */
-Caret.prototype.restore = function() {
+Caret.prototype.restore = function(range) {
   var r = document.createRange();
   var sel = document.getSelection();
 
-  var range = this._range;
+  range = range || this._range;
   if (range) {
     r.setStart(range.startContainer, range.startOffset);
     r.setEnd(range.endContainer, range.endOffset);
