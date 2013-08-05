@@ -53,27 +53,6 @@ Caret.prototype.range = function() {
 
 
 /**
- * Prepend text before caret
- */
-Caret.prototype.prepend = function(text) {
-};
-
-
-/**
- * Append text after caret
- */
-Caret.prototype.append = function(text) {
-};
-
-
-/*
- * Replace text of the selection
- */
-Caret.prototype.replaceWith = function(text) {
-};
-
-
-/**
  * The nearest parent node
  */
 Caret.prototype.parent = function() {
@@ -98,30 +77,6 @@ Caret.prototype.blockParent = function() {
     return null;
   }
   return getBlockElement(parent, this.element);
-};
-
-
-/**
- * Find a parent node with the given tag
- */
-Caret.prototype.findParent = function(tag) {
-  var parent = this.parent();
-  if (!parent) {
-    return null;
-  }
-  tag = tag.toLowerCase();
-  if (parent.nodeName.toLowerCase() === tag) {
-    return parent;
-  }
-  while (parent = parent.parentNode) {
-    if (parent == this.element) {
-      return null;
-    }
-    if (parent.nodeName.toLowerCase() === tag) {
-      return parent;
-    }
-  }
-  return null;
 };
 
 

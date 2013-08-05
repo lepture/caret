@@ -24,30 +24,6 @@ Get the selection object.
 
 Get the range object.
 
-### .prepend(str)
-
-Insert before caret:
-
-```js
-caret.prepend('<strong>enhance</strong>')
-```
-
-### .append(str)
-
-Insert after caret:
-
-```js
-caret.append('<strong>enhance</strong>')
-```
-
-### .replaceWith(str)
-
-Replace the selected text:
-
-```js
-caret.replace('<em>replaced text</em>')
-```
-
 ### .parent()
 
 The parent node of caret.
@@ -63,10 +39,6 @@ Block level parent node of caret.
 ```js
 var node = caret.blockParent()
 ```
-
-### .findParent(tagName)
-
-Recursively find parent node, util it matches the given tag name.
 
 ### .save(range)
 
