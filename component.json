@@ -2,7 +2,7 @@
   "name": "caret",
   "repo": "lepture/caret",
   "description": "Listen to and manipulate the text caret.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": [],
   "dependencies": {
     "component/event": "*",
