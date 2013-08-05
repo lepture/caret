@@ -64,6 +64,10 @@ Block level parent node of caret.
 var node = caret.blockParent()
 ```
 
+### .findParent(tagName)
+
+Recursively find parent node, util it matches the given tag name.
+
 ### .save(range)
 
 Save caret position.

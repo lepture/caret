@@ -9,10 +9,12 @@ function Caret(element) {
 
   bindMouse(this);
 
-  var caret = this;
-  event.bind(element, 'keyup', function() {
-    caret.emit('change');
-  });
+  if (element) {
+    var caret = this;
+    event.bind(element, 'keyup', function() {
+      caret.emit('change');
+    });
+  }
 }
 emitter(Caret.prototype);
 
@@ -96,6 +98,30 @@ Caret.prototype.blockParent = function() {
     return null;
   }
   return getBlockElement(parent, this.element);
+};
+
+
+/**
+ * Find a parent node with the given tag
+ */
+Caret.prototype.findParent = function(tag) {
+  var parent = this.parent();
+  if (!parent) {
+    return null;
+  }
+  tag = tag.toLowerCase();
+  if (parent.nodeName.toLowerCase() === tag) {
+    return parent;
+  }
+  while (parent = parent.parentNode) {
+    if (parent == this.element) {
+      return null;
+    }
+    if (parent.nodeName.toLowerCase() === tag) {
+      return parent;
+    }
+  }
+  return null;
 };
 
 
