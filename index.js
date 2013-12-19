@@ -1,3 +1,10 @@
+/**
+ * Caret
+ *
+ * Listen to and manipulate the text caret.
+ *
+ * Copyright (c) 2013 by Hsiaoming Yang.
+ */
 
 var event = require('event');
 var emitter = require('emitter');
