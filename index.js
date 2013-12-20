@@ -176,6 +176,9 @@ function isChildOf(el, parent) {
     return false;
   }
   while (el = el.parentNode) {
+    if (el === document.body) {
+      return false;
+    }
     if (el === parent) {
       return true;
     }
