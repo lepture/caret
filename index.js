@@ -68,7 +68,7 @@ Caret.prototype.parent = function() {
     return null;
   }
   var node = range.startContainer;
-  if (node.nodeType == document.ELEMENT_NODE) {
+  if (node.nodeType === document.ELEMENT_NODE) {
     return node;
   }
   return node.parentElement || node.parentNode;
@@ -148,7 +148,7 @@ function bindMouse(caret) {
  * Find the block level parent node
  */
 function getBlockElement(el, parent) {
-  if (parent && el == parent) {
+  if (parent && el === parent) {
     return null;
   }
 
@@ -176,9 +176,11 @@ function isChildOf(el, parent) {
     return false;
   }
   while (el = el.parentNode) {
-    if (el == parent) {
+    if (el === parent) {
       return true;
     }
   }
   return false;
 }
+Caret.isChildOf = isChildOf;
+Caret.getBlockElement = getBlockElement;
